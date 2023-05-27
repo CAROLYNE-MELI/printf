@@ -58,7 +58,8 @@ int print_octal(va_list types, char buffer[],
 		num /= 8;
 	}
 	if (flags & F_HASH && init_num != 0)
-		buffer[i--] = '0';        i++;
+		buffer[i--] = '0';
+	i++;
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 /**
@@ -94,7 +95,7 @@ return (print_hexa(types, "0123456789abcdef", buffer,
 			flags, 'x', width, precision, size));
 }
 /**
- * print_hexa - prints a hexadecimal number in lower or upper.
+ * print_hexa - prints a hexadecimal number in lower or upper
  * @types: number of arguments
  * @map_to: Array of values to map the number to
  * @buffer: Buffer array to handle print
@@ -104,7 +105,7 @@ return (print_hexa(types, "0123456789abcdef", buffer,
  * @flags: finds the active flags
  * @size: size
  * @size: Size
- * Return: chars to printed 
+ * Return: chars to printed
  */
 int print_hexa(va_list types, char map_to[], char buffer[],
 		int flags, char flag_ch, int width, int precision, int size)
